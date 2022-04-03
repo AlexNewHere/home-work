@@ -8,7 +8,6 @@ export type messageDataType = {
     time: string,
 }
 
-
 export const Message = (props: messageDataType) => {
     return (
         <div className={a.post}>
