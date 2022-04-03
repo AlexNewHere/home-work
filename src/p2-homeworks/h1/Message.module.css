@@ -1,0 +1,56 @@
+.post {
+    padding: 10px;
+    background-color: chartreuse;
+}
+
+.block_message {
+    display: grid;
+    grid-template-columns: 100px 360px;
+    align-items: end;
+    justify-items: center;
+}
+
+.message {
+    position: relative;
+    min-height: initial;
+    width: 350px;
+    padding: 5px;
+    border-radius: 10px 10px 10px 0;
+    background: #4d5156;
+    color: #bbfbbc;
+}
+
+.message::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 100%;
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: radial-gradient(60px at top left, transparent 49%, #4d5156 51%) no-repeat right bottom;
+}
+
+
+.h2 {
+    color: bisque;
+    margin: 5px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.p_text {
+    margin: 5px;
+    text-align: justify;
+}
+
+p.time {
+    margin: 5px 15px 0 15px;
+    float: right;
+}
+
+.img_avatar {
+
+    width: 70px;
+    border-radius: 500%;
+}
