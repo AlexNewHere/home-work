@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import Affairs from './Affairs'
-// import AlternativeAffairs from './AlternativeAffairs';
+import AlternativeAffairs from './AlternativeAffairs';
 
 // types
 export type AffairPriorityType = 'high' | 'low' |'middle'
@@ -38,6 +38,18 @@ export const deleteAffair = (affairs: Array<AffairType>, _id: number): Array<Aff
 export const HW2 =() => {
     const [affairs, setAffairs] = useState<Array<AffairType>>(defaultAffairs) // need to fix any
 
+
+    const addAffair = (nameAffair: string, priorityAffair: string) => {
+        let newAffair = {
+            _id: affairs[affairs.length-1]._id+1,
+            name: nameAffair,
+            priority: priorityAffair
+        }
+        let newAffairs =[...affairs, newAffair]
+        setAffairs(newAffairs)
+    }
+
+
     const [filter, setFilter] = useState<FilterType>('all')
 
     const filteredAffairs = filterAffairs(affairs, filter)
@@ -46,20 +58,15 @@ export const HW2 =() => {
 
     return (
         <div>
-            <hr/>
-            homeworks 2
-            {/*<AlternativeAffairs/>*/}
+           <h1>Homework 2</h1>
 
-            {/*should work (должно работать)*/}
+            <AlternativeAffairs addAffair={addAffair}/>
             <Affairs
                 data={filteredAffairs}
                 setFilter={setFilter}
                 deleteAffairCallback={deleteAffairCallback}
             />
 
-            <hr/>
-            {/*для личного творчества, могу проверить*/}
-            <hr/>
         </div>
     )
 }
