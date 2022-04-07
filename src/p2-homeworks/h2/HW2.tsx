@@ -35,7 +35,7 @@ export const deleteAffair = (affairs: Array<AffairType>, _id: number): Array<Aff
     return affairs.filter(f=>f._id!==_id) // need to fix
 }
 
-function HW2() {
+export const HW2 =() => {
     const [affairs, setAffairs] = useState<Array<AffairType>>(defaultAffairs) // need to fix any
 
     const [filter, setFilter] = useState<FilterType>('all')
