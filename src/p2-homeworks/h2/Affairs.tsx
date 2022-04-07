@@ -1,11 +1,12 @@
 import React from 'react'
 import Affair from './Affair'
-import {AffairType} from './HW2'
+import {AffairPriorityType, AffairType, FilterType} from './HW2'
+import s from './Affairs.module.css'
 
 type AffairsPropsType = { // need to fix any
-    data: any
-    setFilter: any
-    deleteAffairCallback: any
+    data: Array<AffairType>
+    setFilter: (a: FilterType | AffairPriorityType)=> void
+    deleteAffairCallback: (_id: number)=> void
 }
 
 function Affairs(props: AffairsPropsType) {
@@ -17,20 +18,30 @@ function Affairs(props: AffairsPropsType) {
         />
     ))
 
-    const setAll = () => {} // need to fix
-    const setHigh = () => {}
-    const setMiddle = () => {}
-    const setLow = () => {}
+    const setAll = () => {props.setFilter('all')} // need to fix
+    const setHigh = () => {props.setFilter('high')}
+    const setMiddle = () => {props.setFilter('middle')}
+    const setLow = () => {props.setFilter('low')}
 
     return (
         <div>
 
             {mappedAffairs}
 
-            <button onClick={setAll}>All</button>
-            <button onClick={setHigh}>High</button>
-            <button onClick={setMiddle}>Middle</button>
-            <button onClick={setLow}>Low</button>
+            <tr className={s.button}>
+                <th>
+                    <button onClick={setAll}>All</button>
+                </th>
+                <th>
+                    <button onClick={setHigh}>High</button>
+                </th>
+                <th>
+                    <button onClick={setMiddle}>Middle</button>
+                </th>
+                <th>
+                    <button onClick={setLow}>Low</button>
+                </th>
+            </tr>
         </div>
     )
 }
