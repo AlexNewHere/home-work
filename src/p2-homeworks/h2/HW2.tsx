@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import Affairs from './Affairs'
-import AlternativeAffairs from './AlternativeAffairs';
+// import AlternativeAffairs from './AlternativeAffairs';
 
 // types
 export type AffairPriorityType = 'high' | 'low' |'middle'
