@@ -19,11 +19,8 @@ export const HW1 = () => {
                 message={messageData.message}
                 time={messageData.time}
             />
+            <hr/>
 
-            <hr/>
-            {/*для личного творчества, могу проверить*/}
-            {/*<AlternativeMessage/>*/}
-            <hr/>
         </div>
     )
 }

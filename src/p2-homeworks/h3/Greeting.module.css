@@ -1,12 +1,94 @@
 .someClass {
-
+    display: grid;
+    grid-template-areas:
+        "name fail header amount"
+        "input error btn users";
+    grid-template-columns: 250px 80px 80px 1fr;
+    grid-template-rows: 50px auto;
+    width: 500px;
+    height: 150px;
+    border: 2px solid rgba(0, 0, 0, 0.34);
+    align-items: center;
+    background-color: rgba(97, 218, 251, 0.25);
 }
 
-.error {
-    border: 1px solid red;
+.name {
+    grid-area: name;
+    font-size: 30px;
+    font-weight: bold;
+    padding-left: 10px;
+    text-align: justify;
 }
 
-.span {
-    margin-left:25px;
+.amount {
+    grid-area: amount;
+    font-size: 16px;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.input {
+    grid-area: input;
+    width: 200px;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-left: 10px;
+    padding: 0 10px;
+}
+
+.inputTrue:focus {
+    border-color: #bdbdbd;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(84, 238, 52, 0.33);
+}
+
+.inputFalse:focus {
+    border-color: #bdbdbd;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(241, 47, 47, 0.49);
+}
+
+.input::placeholder {
+    color: #212529;
+    opacity: 0.4;
+}
+
+.users {
+    grid-area: users;
+    font-size: 24px;
+    text-align: center ;
+    margin-left: 25px;
     margin-right: 25px;
+    border: 2px;
+}
+.error {
+    grid-area: error;
+    text-align: center;
+    color: #fc4343;
+}
+.fail {
+    grid-area: fail;
+    font-size: 24px;
+    text-align: center;
+    color: #fc4343;
+}
+.failnone {
+    display: none;
+}
+
+.btn {
+    grid-area: btn;
+    width: auto;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #55a2f3;
+    color: #fff;
+    cursor: pointer;
+}
+
+.btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
