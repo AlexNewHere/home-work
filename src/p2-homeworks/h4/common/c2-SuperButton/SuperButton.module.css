@@ -1,7 +1,17 @@
 .default {
+    background: #a3ef71;
+    margin: 5px;
+    border-radius: 5px;
+}
 
+.default:hover {
+    background: #d1e8c3;
+    box-shadow: rgba(180, 185, 181, 0.53) 0px 0px 10px;
 }
 
 .red {
-    background: red;
+
+    background: #ec7878;
+    margin: 5px;
+    border-radius: 5px;
 }
