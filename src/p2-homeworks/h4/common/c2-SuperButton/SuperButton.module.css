@@ -3,10 +3,10 @@
     transform: perspective(100px) rotateX(0deg) rotateY(0deg);
   }
   50% {
-    transform:perspective(100px) rotateX(-180.1deg) rotateY(0deg);
+    transform:perspective(100px) rotateX(180deg) rotateY(0deg);
   }
   100% {
-    transform: perspective(100px) rotateX(0deg) rotateY(0deg);
+    transform: perspective(100px) rotateX(360deg) rotateY(0deg);
   }
 }
 
@@ -23,7 +23,7 @@
 .default:hover {
     background: rgba(94, 200, 232, 0.59);
     border: none;
-    animation: animation 2s cubic-bezier(0.9, 0, 0.175, 1) infinite;
+    animation: animation 2s cubic-bezier(0.9, 0, 0.175, 1)  infinite;
 }
 
 .red {
