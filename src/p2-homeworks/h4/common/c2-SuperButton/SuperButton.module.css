@@ -1,16 +1,32 @@
+@keyframes animation {
+  0% {
+    transform: perspective(100px) rotateX(0deg) rotateY(0deg);
+  }
+  50% {
+    transform:perspective(100px) rotateX(-180.1deg) rotateY(0deg);
+  }
+  100% {
+    transform: perspective(100px) rotateX(0deg) rotateY(0deg);
+  }
+}
+
 .default {
-    background: #a3ef71;
+    background: #6db5e3;
     margin: 5px;
     border-radius: 5px;
+    width: 90px;
+    height: 40px;
+    border: 1px solid #6db5e3;
+    box-shadow: rgba(180, 185, 181, 0.68) 0 0 10px;
 }
 
 .default:hover {
-    background: #d1e8c3;
-    box-shadow: rgba(180, 185, 181, 0.53) 0px 0px 10px;
+    background: rgba(94, 200, 232, 0.59);
+    border: none;
+    animation: animation 2s cubic-bezier(0.9, 0, 0.175, 1) infinite;
 }
 
 .red {
-
     background: #ec7878;
     margin: 5px;
     border-radius: 5px;
