@@ -7,7 +7,7 @@ import SuperCheckbox from './common/c3-SuperCheckbox/SuperCheckbox'
 
 function HW4() {
     const [text, setText] = useState<string>('')
-    const error = text.length>2 ? '' : 'Error!!!!'
+    const error = text.length > 2 ? '' : 'Error!!!!'
 
     const showAlert = () => {
         if (error) {
@@ -23,7 +23,7 @@ function HW4() {
     return (
         <div>
             <hr/>
-            homeworks 4
+            <h1>homeworks 4</h1>
 
             <div className={s.column}>
                 <SuperInputText

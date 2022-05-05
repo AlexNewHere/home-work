@@ -1,0 +1,64 @@
+.place {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.placeTitle {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    width: 40%;
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #243f5b;
+    margin-bottom: 15px;
+
+}
+
+.spanStyle {
+    color: red;
+}
+
+.pencil {
+    position: relative;
+    width: 0.35em;
+    height: 0.8em;
+    background: #ff0303;
+    transform: rotate(45deg);
+    font-size: 0.8em;
+
+}
+
+.pencil:before {
+    content: "";
+    position: absolute;
+    top: -0.35em;
+    left: 0;
+    width: 0.35em;
+    height: 0.3em;
+    background: #ff0303;
+    border-radius: 0.1em;
+}
+
+.pencil:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 0.85em;
+    left: 0;
+    border: solid 0.2em #ff0303;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-top: solid 0.45em #ff0303;
+}

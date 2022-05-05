@@ -1,29 +1,49 @@
-@keyframes animation {
-  0% {
-    transform: perspective(100px) rotateX(0deg) rotateY(0deg);
-  }
-  50% {
-    transform:perspective(100px) rotateX(180deg) rotateY(0deg);
-  }
-  100% {
-    transform: perspective(100px) rotateX(360deg) rotateY(0deg);
-  }
-}
 
 .default {
-    background: #6db5e3;
+    position: relative;
+    font-size: 13px;
+    text-transform: uppercase;
+    padding: 13px 25px;
+    display: inline-block;
+    border-radius: 20px;
+    transition: all .3s;
+    border: none;
+    font-family: inherit;
+    font-weight: 500;
     margin: 5px;
-    border-radius: 5px;
-    width: 90px;
-    height: 40px;
-    border: 1px solid #6db5e3;
-    box-shadow: rgba(180, 185, 181, 0.68) 0 0 10px;
+    background-color: rgba(61, 156, 225, 0.76);
 }
 
 .default:hover {
-    background: rgba(94, 200, 232, 0.59);
-    border: none;
-    animation: animation 2s cubic-bezier(0.9, 0, 0.175, 1)  infinite;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.default:active {
+    transform: translateY(-6px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.default::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+}
+
+.default::after {
+    background-color: #fff;
+}
+
+.default:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
 }
 
 .red {

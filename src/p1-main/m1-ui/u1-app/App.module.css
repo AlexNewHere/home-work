@@ -1,21 +1,8 @@
 .App {
+    background-color: rgba(204, 220, 225, 0.37);
     width: 900px;
     margin-left: auto;
     margin-right: auto;
 }
 
-a {
-    text-decoration: none;
-    margin-left: 10px;
-border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 2px;
-}
-a:hover {
-    background-color: #c7d8e5;
-}
 
-a:focus {
-    color: #f62a2a;
-    background-color: #ccdfef;
-}

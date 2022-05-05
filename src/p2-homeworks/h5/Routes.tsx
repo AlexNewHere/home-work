@@ -9,13 +9,13 @@ export const PATH = {
     SENIOR: '/senior',
 }
 
-export const InRoutes=()=> {
+export const Pages=()=> {
     return (
         <div>
             <Routes>
 
             <Route path={PATH.PRE_JUNIOR} element={<PreJunior/>}/>
-                // add routes
+
 
             <Route path={'/*'} element={<Error404/>}/>
 
@@ -24,4 +24,4 @@ export const InRoutes=()=> {
     )
 }
 
-export default InRoutes
+export default Pages

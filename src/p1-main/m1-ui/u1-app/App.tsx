@@ -1,7 +1,7 @@
 import React from 'react'
 import s from './App.module.css'
 import Header from '../../../p2-homeworks/h5/Header';
-import InRoutes, {PATH} from '../../../p2-homeworks/h5/Routes';
+import {Pages} from '../../../p2-homeworks/h5/Routes';
 
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
             <div>react homeworks:</div>
 
             <Header/>
-            <InRoutes/>
+            <Pages/>
 
         </div>
     )
