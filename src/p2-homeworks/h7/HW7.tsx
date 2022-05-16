@@ -9,7 +9,7 @@ function HW7() {
 
     return (<>
             <hr/>
-            homeworks 7
+            <h3>homeworks 7</h3>
         <div style={{display: 'flex'}}>
 
 
