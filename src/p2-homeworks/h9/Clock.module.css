@@ -1,0 +1,32 @@
+.placeClock {
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+}
+
+.clock {
+    width: 150px;
+    height: 100px;
+    border-radius: 20%;
+    background-color: rgba(146, 216, 232, 0.87);
+    box-shadow: #39b9fc 0 5px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #9b12ea;
+}
+
+.date {
+
+
+
+    font-size: 18px;
+    font-weight: bold;
+    color: #fa0036;
+}
+
+
+
