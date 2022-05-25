@@ -24,9 +24,8 @@ function Clock() {
     const onMouseLeave = () => {
         setShow(false)
     }
-
-    const stringTime = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}` // fix with date
-    const stringDate = `${date.getDate()}-0${date.getMonth()}-${date.getFullYear()}` // fix with date
+    const stringTime = date.toLocaleTimeString()
+    const stringDate = date.toLocaleDateString()
 
     return (
         <div >
