@@ -1,25 +1,31 @@
 import React from 'react'
 import SuperButton from '../h4/common/c2-SuperButton/SuperButton'
+import {useAppDispatch, useAppSelector} from './bll/store';
+import {loadingAC, offLoadingAC} from './bll/loadingReducer';
+import './loadingStyle.css'
 
 function HW10() {
-    // useSelector, useDispatch
-    const loading = false
+
+  const {loading} = useAppSelector(state => state.loading)
+  const dispatch = useAppDispatch()
 
     const setLoading = () => {
-        // dispatch
-        // setTimeout
+        dispatch(loadingAC())
+        setTimeout(() => {
+            dispatch(offLoadingAC())
+        }, 2000)
         console.log('loading...')
     };
 
     return (
         <div>
             <hr/>
-            homeworks 10
+            <h3>homeworks 10</h3>
 
             {/*should work (должно работать)*/}
             {loading
                 ? (
-                    <div>крутилка...</div>
+                    <div className='loader'></div>
                 ) : (
                     <div>
                         <SuperButton onClick={setLoading}>set loading...</SuperButton>
