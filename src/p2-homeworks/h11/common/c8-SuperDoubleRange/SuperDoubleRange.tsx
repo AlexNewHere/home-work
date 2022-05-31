@@ -16,7 +16,7 @@ const SuperDoubleRange: React.FC<SuperDoubleRangePropsType> = (
 
     return (
         <>
-            DoubleRange
+            <input type="range" step={1} min={0} max={100} value={10}/>
         </>
     )
 }

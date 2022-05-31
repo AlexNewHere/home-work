@@ -10,17 +10,14 @@ export const PATH = {
     SENIOR: '/senior',
 }
 
-export const Pages=()=> {
+export const Pages = () => {
     return (
         <div>
             <Routes>
-
-            <Route path={PATH.PRE_JUNIOR} element={<PreJunior/>}/>
-            <Route path={PATH.JUNIOR} element={<Junior/>}/>
-
-
-            <Route path={'/*'} element={<Error404/>}/>
-
+                <Route path={'/'} element={<PreJunior/>}/>
+                <Route path={PATH.PRE_JUNIOR} element={<PreJunior/>}/>
+                <Route path={PATH.JUNIOR} element={<Junior/>}/>
+                <Route path={'/*'} element={<Error404/>}/>
             </Routes>
         </div>
     )
