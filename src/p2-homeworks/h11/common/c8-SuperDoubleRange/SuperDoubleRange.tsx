@@ -1,6 +1,7 @@
-import React from 'react'
+import React, {ChangeEvent, DetailedHTMLProps, InputHTMLAttributes} from 'react'
 
-type SuperDoubleRangePropsType = {
+
+type SuperDoubleRangePropsType =  {
     onChangeRange?: (value: [number, number]) => void
     value?: [number, number]
     // min, max, step, disable, ...
@@ -14,9 +15,21 @@ const SuperDoubleRange: React.FC<SuperDoubleRangePropsType> = (
 ) => {
     // сделать самому, можно подключать библиотеки
 
+    const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => {
+
+
+        // onChangeRange && onChangeRange(+e.currentTarget.value)
+    }
+
+    const minMax = value || [0, 100]
     return (
         <>
-            <input type="range" step={1} min={0} max={100} value={10}/>
+            <input
+                type="range"
+                onChange={onChangeCallback}
+
+                value={minMax[0]}
+                />
         </>
     )
 }

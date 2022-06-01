@@ -1,11 +1,15 @@
 import React, {useState} from 'react'
 import SuperRange from './common/c7-SuperRange/SuperRange'
-import SuperDoubleRange from './common/c8-SuperDoubleRange/SuperDoubleRange'
+// import SuperDoubleRange from './common/c8-SuperDoubleRange/SuperDoubleRange'
+import {DoubleRangeSlider} from './common/rangeSlider/DoubleRangeSlider'
+import s from './common/c7-SuperRange/SuperRange.module.css';
+
 
 function HW11() {
-    const [minValue, setMinValue] = useState(0)
-    const [maxValue, setMaxValue] = useState(100)
+    // const [minValue, setMinValue] = useState<number>(0)
+    const [maxValue, setMaxValue] = useState<number>(100)
 
+    const [minVal, setMinVal] = useState(0);
 
     return (
         <div>
@@ -13,21 +17,30 @@ function HW11() {
             <h3>homeworks 11</h3>
 
             {/*should work (должно работать)*/}
-            <div>
-                <span>{minValue}</span>
+            <div className={s.placeInput} >
+                <span>{minVal}</span>
                 <SuperRange
-                    onChangeRange={setMinValue}
-                />
-            </div>
+                    onChangeRange={(valueSlide)=>{setMinVal(valueSlide)}}
+                    value={minVal}
+                    max={maxValue}
 
-            <div>
-                <span>{minValue}</span>
-                <SuperDoubleRange
-                    // value={[value1, value2]}
-                    // onChangeRange={setValue1}
                 />
-                <span>{maxValue}</span>
             </div>
+            <DoubleRangeSlider
+                min={0}
+                max={100}
+                onChange={({min, max}) => {setMaxValue(max); setMinVal(min)}}
+                minVal={minVal}
+                setMinVal={(val)=>setMinVal(val)}
+            />
+            {/*<div>*/}
+            {/*    <span>{minValue}</span>*/}
+            {/*    <SuperDoubleRange*/}
+            {/*        value={[minValue, maxValue]}*/}
+            {/*        // onChangeRange={setMinValue}*/}
+            {/*    />*/}
+            {/*    <span>{maxValue}</span>*/}
+            {/*</div>*/}
             <hr/>
 
             {/*<AlternativeSuperRange/>*/}
