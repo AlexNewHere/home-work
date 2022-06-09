@@ -24,7 +24,7 @@ const SuperSelect: React.FC<SuperSelectPropsType> = (
 
     return (
         <select
-            style={{width: '50px'}}
+            style={{width: '80px'}}
             onChange={onChangeCallback}
             {...restProps}>
 

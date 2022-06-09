@@ -1,15 +1,24 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import SuperRange from './common/c7-SuperRange/SuperRange'
 // import SuperDoubleRange from './common/c8-SuperDoubleRange/SuperDoubleRange'
 import {DoubleRangeSlider} from './common/rangeSlider/DoubleRangeSlider'
 import s from './common/c7-SuperRange/SuperRange.module.css';
+import {useAppDispatch} from '../h10/bll/store';
+import {changeColorsAC} from '../h10/bll/themesReducer';
 
 
 function HW11() {
-    // const [minValue, setMinValue] = useState<number>(0)
+
+    const dispatch=useAppDispatch()
+
     const [maxValue, setMaxValue] = useState<number>(100)
 
-    const [minVal, setMinVal] = useState(0);
+    const [minVal, setMinVal] = useState<number>(0);
+
+    useEffect(()=>{
+        dispatch(changeColorsAC(minVal, maxValue))
+    }, [minVal ,maxValue])
+
 
     return (
         <div>
