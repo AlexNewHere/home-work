@@ -54,6 +54,10 @@ export const DoubleRangeSlider: React.FC<RangeType> = ({min,
         onChange({min: minVal, max: maxVal});
     }, [minVal, maxVal, onChange]);
 
+    useEffect(() => {
+        minVal > maxVal && onChange({min: maxVal, max: maxVal})
+    }, [minVal])
+
     return (
         <div className="container">
             <input

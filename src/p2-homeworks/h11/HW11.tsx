@@ -31,7 +31,6 @@ function HW11() {
                 <SuperRange
                     onChangeRange={(valueSlide)=>{setMinVal(valueSlide)}}
                     value={minVal}
-                    max={maxValue}
 
                 />
             </div>
