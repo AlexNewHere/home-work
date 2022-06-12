@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useState, useRef} from 'react';
+import React, {useCallback, useEffect, useRef} from 'react';
 import styles from './rangeSlider.module.css';
 
 type OnChangeType = {
@@ -11,15 +11,17 @@ type RangeType = {
     max: number;
     onChange: ({min, max}: OnChangeType) => void;
     minVal: number;
-    setMinVal: (val: number) => void;
+    maxVal: number;
 };
 
-export const DoubleRangeSlider: React.FC<RangeType> = ({min,
+export const DoubleRangeSlider: React.FC<RangeType> = ({
+                                                           min,
                                                            max,
                                                            minVal,
-                                                           setMinVal,
-                                                           onChange}) => {
-    const [maxVal, setMaxVal] = useState(max);
+                                                           maxVal,
+                                                           onChange
+                                                       }) => {
+
     const range = useRef<HTMLInputElement>(null);
 
     // Convert to %
@@ -27,8 +29,10 @@ export const DoubleRangeSlider: React.FC<RangeType> = ({min,
         (value) => Math.round(((value - min) / (max - min)) * 100),
         [min, max]
     );
+
     const minPercent = getPercent(minVal);
     const maxPercent = getPercent(maxVal);
+
     // Set width of the range to decrease from the left side
     useEffect(() => {
         if (range.current) {
@@ -61,8 +65,7 @@ export const DoubleRangeSlider: React.FC<RangeType> = ({min,
                 max={max}
                 value={minVal}
                 onChange={(event) => {
-                    const value = Math.min(event.currentTarget.valueAsNumber, maxVal);
-                    setMinVal(value);
+                    onChange({min: Math.min(event.currentTarget.valueAsNumber, maxVal), max: maxVal});
                 }}
                 className={`${styles.thumb} ${styles.thumb__left}`}
                 style={{zIndex: minVal > max - 100 ? '5' : ''}}
@@ -73,8 +76,7 @@ export const DoubleRangeSlider: React.FC<RangeType> = ({min,
                 max={max}
                 value={maxVal}
                 onChange={(event) => {
-                    const value = Math.max(event.currentTarget.valueAsNumber, minVal);
-                    setMaxVal(value);
+                    onChange({min: minVal, max: Math.max(event.currentTarget.valueAsNumber, minVal)});
                 }}
                 className={`${styles.thumb} ${styles.thumb__right}`}
             />
@@ -85,7 +87,6 @@ export const DoubleRangeSlider: React.FC<RangeType> = ({min,
                 <div className={`${styles.slider__left_value}`}>{minVal}</div>
                 <div className={`${styles.slider__right_value}`}>{maxVal}</div>
             </div>
-
         </div>
     );
 };

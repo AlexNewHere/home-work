@@ -10,15 +10,16 @@ import {changeColorsAC} from '../h10/bll/themesReducer';
 function HW11() {
 
     const dispatch=useAppDispatch()
+
     const min = 0
     const max = 100
-    const [maxValue, setMaxValue] = useState<number>(max)
 
-    const [minVal, setMinVal] = useState<number>(min);
+    const [minVal, setMinVal] = useState<number>(min)
+    const [maxVal, setMaxVal] = useState<number>(max)
 
     useEffect(()=>{
-        dispatch(changeColorsAC(minVal, maxValue))
-    }, [minVal ,maxValue])
+        dispatch(changeColorsAC(minVal, maxVal))
+    }, [minVal ,maxVal])
 
 
     return (
@@ -39,9 +40,9 @@ function HW11() {
             <DoubleRangeSlider
                 min={min}
                 max={max}
-                onChange={({min, max}) => {setMaxValue(max); setMinVal(min)}}
+                onChange={({min, max}) => {setMaxVal(max); setMinVal(min)}}
                 minVal={minVal}
-                setMinVal={(val)=>setMinVal(val)}
+                maxVal={maxVal}
             />
             {/*<div>*/}
             {/*    <span>{minValue}</span>*/}
