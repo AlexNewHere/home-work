@@ -12,8 +12,8 @@
 
 .slider__track,
 .slider__range,
-.slider__left-value,
-.slider__right-value {
+.slider__left_value,
+.slider__right_value {
     position: absolute;
 }
 
@@ -26,27 +26,27 @@
 .slider__track {
     background-color: #ced4da;
     width: 100%;
-    z-index: 1;
+    //z-index: 1;
 }
 
 .slider__range {
     background-color: #23eae1;
-    z-index: 2;
+    //z-index: 2;
 }
 
-.slider__left-value,
-.slider__right-value {
+.slider__left_value,
+.slider__right_value {
     color: #000205;
     font-size: 12px;
     margin-top: 20px;
 }
 
-.slider__left-value {
-    left: 6px;
+.slider__left_value {
+    left: -6px;
 }
 
-.slider__right-value {
-    right: -4px;
+.slider__right_value {
+    right: -6px;
 }
 
 /* Removing the default appearance */
@@ -64,11 +64,11 @@
     outline: none;
 }
 
-.thumb--left {
+.thumb__left {
     z-index: 3;
 }
 
-.thumb--right {
+.thumb__right {
     z-index: 4;
 }
 

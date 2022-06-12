@@ -11,13 +11,15 @@ function HW11() {
 
     const dispatch=useAppDispatch()
 
-    const [maxValue, setMaxValue] = useState<number>(100)
+    const min = 0
+    const max = 100
 
-    const [minVal, setMinVal] = useState<number>(0);
+    const [minVal, setMinVal] = useState<number>(min)
+    const [maxVal, setMaxVal] = useState<number>(max)
 
     useEffect(()=>{
-        dispatch(changeColorsAC(minVal, maxValue))
-    }, [minVal ,maxValue])
+        dispatch(changeColorsAC(minVal, maxVal))
+    }, [minVal ,maxVal])
 
 
     return (
@@ -31,16 +33,16 @@ function HW11() {
                 <SuperRange
                     onChangeRange={(valueSlide)=>{setMinVal(valueSlide)}}
                     value={minVal}
-                    max={maxValue}
-
+                    min={min}
+                    max={max}
                 />
             </div>
             <DoubleRangeSlider
-                min={0}
-                max={100}
-                onChange={({min, max}) => {setMaxValue(max); setMinVal(min)}}
+                min={min}
+                max={max}
+                onChange={({min, max}) => {setMaxVal(max); setMinVal(min)}}
                 minVal={minVal}
-                setMinVal={(val)=>setMinVal(val)}
+                maxVal={maxVal}
             />
             {/*<div>*/}
             {/*    <span>{minValue}</span>*/}
