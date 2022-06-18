@@ -16,30 +16,27 @@ function HW12() {
 
     const styleMixing: CSSProperties = {
         backgroundImage: `linear-gradient(to left, 
-        rgba(${theme.minAmount*2}, ${theme.maxAmount-theme.minAmount}, ${theme.maxAmount*2}, 1), 
-        rgba(196, ${theme.minAmount*2}, ${theme.maxAmount}, 1), 
-        rgba(${theme.maxAmount-theme.minAmount}, ${theme.maxAmount}, ${theme.maxAmount*2}, 1))`
+        rgba(${theme.minAmount * 2}, ${theme.maxAmount - theme.minAmount}, ${theme.maxAmount * 2}, 1), 
+        rgba(196, ${theme.minAmount * 2}, ${theme.maxAmount}, 1), 
+        rgba(${theme.maxAmount - theme.minAmount}, ${theme.maxAmount}, ${theme.maxAmount * 2}, 1))`
     }
 
-const styleTheme: CSSProperties | undefined = ((theme.theme==='mixing') ? styleMixing: undefined)
+    const styleTheme: CSSProperties | undefined = ((theme.theme === 'mixing') ? styleMixing : undefined)
 
     return (
-<>{(theme.theme==='mixing') && <span style={{display: 'flex', justifyContent: 'center'}}>select range</span>}
-        <div style={styleTheme} className={s.placeWork + ' ' + s[theme.theme]}>
+        <>{(theme.theme === 'mixing') && <span style={{display: 'flex', justifyContent: 'center'}}>select range</span>}
+            <div style={styleTheme} className={s.placeWork + ' ' + s[theme.theme]}>
 
                 <span className={s[theme.theme + '-text']}>
                 <h3>homeworks 12</h3>
             </span>
 
-            <span><SuperSelect options={themes} onChangeOption={onChangeCallback}/></span>
+                <span><SuperSelect options={themes} onChangeOption={onChangeCallback}/></span>
 
+                {/*SuperSelect or SuperRadio*/}
 
-            {/*should work (должно работать)*/}
-            {/*SuperSelect or SuperRadio*/}
-
-
-        </div>
-</>
+            </div>
+        </>
     );
 }
 
